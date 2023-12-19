@@ -1740,22 +1740,43 @@ void handleInterrupt() {
 
 bool getExplored(byte x, byte y) {
   // return gameMap16[x][y].explored;
-  return gameMap16[x][y].flags % 2;
+  // return gameMap16[x][y].flags % 2;
+  return bitRead(gameMap16[x][y].flags, 0);
 }
 bool getFlagged(byte x, byte y) {
-  return (gameMap16[x][y].flags / 100) % 2;
+  // return (gameMap16[x][y].flags / 100) % 2;
+  return bitRead(gameMap16[x][y].flags, 2);
 }
 bool getBlinkState(byte x, byte y) {
-  return (gameMap16[x][y].flags / 10) % 2;
+  // return (gameMap16[x][y].flags / 10) % 2;
+  return bitRead(gameMap16[x][y].flags, 1);
 }
 void setExplored(byte x, byte y, bool val) {
-  gameMap16[x][y].flags = (gameMap16[x][y].flags/10)*10 + (val)?1:0;
+  // gameMap16[x][y].flags = (gameMap16[x][y].flags/10)*10 + (val)?1:0;
+  if (val) {
+    bitSet(gameMap16[x][y].flags, 0);
+  }
+  else {
+    bitClear(gameMap16[x][y].flags, 0);
+  }
 }
 void setFlagged(byte x, byte y, bool val) {
-  gameMap16[x][y].flags = ((val)?1:0)*100 + gameMap16[x][y].flags%100;
+  // gameMap16[x][y].flags = ((val)?1:0)*100 + gameMap16[x][y].flags%100;
+  if (val) {
+    bitSet(gameMap16[x][y].flags, 2);
+  }
+  else {
+    bitClear(gameMap16[x][y].flags, 2);
+  }
 }
 void setBlinkState(byte x, byte y, bool val) {
-  gameMap16[x][y].flags = (gameMap16[x][y].flags/100)*100 + ((val)?1:0)*10 + gameMap16[x][y].flags%10;
+  // gameMap16[x][y].flags = (gameMap16[x][y].flags/100)*100 + ((val)?1:0)*10 + gameMap16[x][y].flags%10;
+  if (val) {
+    bitSet(gameMap16[x][y].flags, 1);
+  }
+  else {
+    bitClear(gameMap16[x][y].flags, 1);
+  }
 }
 
 
@@ -1874,6 +1895,7 @@ void initializeMap() {
       lc.setLed(0, i, j, true);
     }
   }
+  
 }
 void placeBombAndCalculateAdjacent(short row, short col) {
   // Place bomb
