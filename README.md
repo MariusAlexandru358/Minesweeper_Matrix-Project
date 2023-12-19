@@ -86,7 +86,7 @@ Every valid joystick and button action has a sound associated with it. (Sounds c
 ![Electrical Circuit Schematic](https://github.com/MariusAlexandru358/Minesweeper_Matrix-Project/blob/main/Minesweeper/MinesweeperElectrical.png)
 
 ## Hardware setup
-![Setup Image](https://github.com/MariusAlexandru358/Minesweeper_Matrix-Project/blob/main/Minesweeper/Minesweeper.jgp)
+![Setup Image](https://github.com/MariusAlexandru358/Minesweeper_Matrix-Project/blob/main/Minesweeper/Minesweeper.jpg)
 
 ## Video showcasing functionality
 <a href="https://youtu.be/D7fRLBvE8KM" target="_blank">youtube link here</a>
