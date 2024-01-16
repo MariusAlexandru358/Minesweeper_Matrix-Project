@@ -81,6 +81,21 @@ After the game ends, an end message and the score is displayed on the LCD, befor
 
 Every valid joystick and button action has a sound associated with it. (Sounds can be turned off from the settings should you be playing this in a quite place like a library)
 
+## Components
+- Arduino UNO
+- Breadboard
+- Joystick
+- 8x8 LED Matrix
+- MAX7218 (Matrix Driver)
+- Resistor for the Matrix Driver (10k&#x2126; to 200k&#x2126;): I used 2 22k&#x2126; Resistors
+- pushbutton
+- 100&#x2126; Resistor 
+- 1 electrolytic capacitor of 10 μF
+- 1 ceramic capacitor of 104 pF
+- 16x2 LCD
+- potentiometer
+- 330&#x2126; or 220&#x2126; Resistors (1)
+- Wires as needed
 
 ## Electrical schematic
 ![Electrical Circuit Schematic](https://github.com/MariusAlexandru358/Minesweeper_Matrix-Project/blob/main/Minesweeper/MinesweeperElectrical.png)
